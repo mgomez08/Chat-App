@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
+  const submit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <form className="form-auth">
+    <form className="form-auth" onSubmit={submit}>
       <h2 className="title-form">Login ChatApp</h2>
       <input
         className="input-email"
@@ -24,7 +27,9 @@ export const LoginPage = () => {
         </div>
         <Link to="/auth/register">¿Nueva cuenta?</Link>
       </div>
-      <button className="button-auth">Ingresar</button>
+      <button className="button-auth">
+        <Link to="/">Ingresar</Link>
+      </button>
     </form>
   );
 };

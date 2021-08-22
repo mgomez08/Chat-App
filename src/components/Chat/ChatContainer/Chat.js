@@ -7,7 +7,11 @@ export const Chat = () => {
   return (
     <div className="chat">
       {messages.map((message) => {
-        return message % 2 === 0 ? <MessageIncoming /> : <MessageOutgoing />;
+        return message % 2 === 0 ? (
+          <MessageIncoming key={message} />
+        ) : (
+          <MessageOutgoing key={message} />
+        );
       })}
     </div>
   );

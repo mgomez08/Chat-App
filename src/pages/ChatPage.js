@@ -5,10 +5,11 @@ import { ChatsSidebar } from "../components/Chat/ChatsSidebar/ChatsSidebar";
 import "../css/chat.css";
 
 export const ChatPage = () => {
+  const [isSelect, setIsSelect] = React.useState(false);
   return (
     <div className="app">
-      <ChatsSidebar />
-      {true ? <ChatContainer /> : <ChatSelect />}
+      <ChatsSidebar setIsSelect={setIsSelect} />
+      {isSelect ? <ChatContainer /> : <ChatSelect />}
     </div>
   );
 };

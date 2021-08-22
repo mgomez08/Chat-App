@@ -1,8 +1,11 @@
 import React from "react";
 import avatar from "../../../assets/avatar.jpg";
-export const ChatItem = () => {
+export const ChatItem = ({ setIsSelect }) => {
+  const hola = () => {
+    setIsSelect(true);
+  };
   return (
-    <div className="chat-item">
+    <div className="chat-item" onClick={hola}>
       <img src={avatar} alt="avatar" className="img-friend" />
       <div className="sumary">
         <div className="info-msg">

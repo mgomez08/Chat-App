@@ -190,10 +190,10 @@
   min-width: 300px;
 }
 .alert-info {
-  width: 100%;
   background-color: var(--black-light-background);
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+  border-radius: 6px;
 }
 .alert-title {
   color: var(--green);

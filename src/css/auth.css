@@ -47,8 +47,8 @@ input[type="checkbox"]:checked + label:before {
   color: var(--green);
   border-color: #fff;
 }
-.linkas {
-  justify-self: flex-end;
+.actions a {
+  color: var(--green);
 }
 .input-email,
 .input-password,
@@ -73,4 +73,7 @@ input[type="checkbox"]:checked + label:before {
   text-align: center;
   max-width: 400px;
   font-size: 24px;
+}
+.button-auth a {
+  width: 100%;
 }
