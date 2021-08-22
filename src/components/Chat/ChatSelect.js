@@ -4,9 +4,8 @@ export const ChatSelect = () => {
   return (
     <div className="middle-screen">
       <div className="alert-info">
-        <hr />
-        <h3>Seleccione un chat </h3>
-        <h5 className="pb-3">Para iniciar una conversación</h5>
+        <h2 class="alert-title">Seleccione un chat </h2>
+        <h4 className="pb-3">Para iniciar una conversación</h4>
       </div>
     </div>
   );

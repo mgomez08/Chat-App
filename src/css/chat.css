@@ -178,3 +178,25 @@
 .button-send-msg:hover {
   filter: brightness(1.2);
 }
+/*FIN ESTILOS DEL CHAT CONTAINER*/
+
+/* ESTILOS DEL CHAT SELECT*/
+.middle-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+}
+.alert-info {
+  width: 100%;
+  background-color: var(--black-light-background);
+  text-align: center;
+  padding: 20px;
+}
+.alert-title {
+  color: var(--green);
+  font-size: 32px;
+  padding-bottom: 5px;
+}
