@@ -7,8 +7,8 @@ import { useForm } from "../hooks/useForm";
 export const LoginPage = () => {
   const { login } = useContext(AuthContext);
   const [form, setForm, handleChange] = useForm({
-    email: "test@test.com",
-    password: "1231234",
+    email: "",
+    password: "",
     rememberme: false,
   });
   useEffect(() => {

@@ -7,9 +7,9 @@ import { useForm } from "../hooks/useForm";
 export const RegisterPage = () => {
   const { register } = useContext(AuthContext);
   const [form, , handleChange] = useForm({
-    name: "Tests",
-    email: "test@test.com",
-    password: "1231234",
+    name: "",
+    email: "",
+    password: "",
   });
   const allFull = () => {
     return form.name.length > 0 &&
