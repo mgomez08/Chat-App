@@ -27,6 +27,10 @@
 }
 .username {
   font-size: var(--font-size-h2);
+  margin: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .button-logout {
   background-color: var(--red);

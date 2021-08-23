@@ -12,6 +12,7 @@ html {
   --color-font-disabled: #b3b7b9;
   --green: #00af9c;
   --red: #d2504d;
+  --disabled: #757475;
   --font-size-h2: 16;
   font-family: "Roboto", sans-serif;
 }
@@ -29,6 +30,9 @@ textarea {
 input,
 button {
   all: unset;
+}
+button:disabled {
+  background-color: var(--disabled);
 }
 input[type="checkbox"] {
   display: none;
