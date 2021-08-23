@@ -9,10 +9,14 @@ export const useSocket = (serverPath) => {
   const [socket, setSocket] = useState(null);
   const [online, setOnline] = useState(false);
   const socketConnect = useCallback(() => {
+    const token = localStorage.getItem("token");
     const socketTemp = io.connect(serverPath, {
       transports: ["websocket"],
       autoConnect: true,
       forceNew: true,
+      query: {
+        "x-token": token,
+      },
     });
     setSocket(socketTemp);
   }, [serverPath]);
