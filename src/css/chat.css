@@ -50,6 +50,7 @@
   overflow-y: auto;
 }
 .chat-item {
+  align-items: center;
   display: flex;
   padding: 12px 12px;
   width: 100%;
@@ -61,11 +62,30 @@
 .chat-item:hover {
   cursor: pointer;
 }
+.img-and-status {
+  display: flex;
+  align-items: center;
+}
 .img-friend {
   border-radius: 30px;
   height: 60px;
   object-fit: cover;
   width: 60px;
+}
+.circle-status {
+  border-radius: 30px;
+  height: 17px;
+  left: -15px;
+  position: relative;
+  top: 20px;
+  width: 17px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.online {
+  background-color: #85b23f;
+}
+.offline {
+  background-color: var(--red);
 }
 .sumary {
   overflow: hidden;
