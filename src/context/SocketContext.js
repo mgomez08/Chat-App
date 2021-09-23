@@ -7,6 +7,7 @@ import { ChatContext } from "./chat/ChatContext";
 import { useSocket } from "../hooks/useSocket";
 
 import { types } from "../types/types";
+import { scrollToBottomAnimated } from "../helpers/scrollToBottom";
 
 export const SocketContext = createContext();
 
@@ -35,6 +36,16 @@ export const SocketProvider = ({ children }) => {
         type: types.loadUsers,
         payload: users,
       });
+    });
+  }, [socket, dispatch]);
+  //Listen new message
+  useEffect(() => {
+    socket?.on("personal-message", (message) => {
+      dispatch({
+        type: types.newMessage,
+        payload: message,
+      });
+      scrollToBottomAnimated("chat");
     });
   }, [socket, dispatch]);
 

@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ChatContainer } from "../components/Chat/ChatContainer/ChatContainer";
 import { ChatSelect } from "../components/Chat/ChatSelect";
 import { ChatsSidebar } from "../components/Chat/ChatsSidebar/ChatsSidebar";
+import { ChatContext } from "../context/chat/ChatContext";
 import "../css/chat.css";
 
 export const ChatPage = () => {
-  const [isSelect, setIsSelect] = React.useState(false);
+  const { chatState } = useContext(ChatContext);
   return (
     <div className="app">
-      <ChatsSidebar setIsSelect={setIsSelect} />
-      {isSelect ? <ChatContainer /> : <ChatSelect />}
+      <ChatsSidebar />
+      {chatState.chatActive ? <ChatContainer /> : <ChatSelect />}
     </div>
   );
 };

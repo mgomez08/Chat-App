@@ -1,10 +1,10 @@
 import React from "react";
-
-export const MessageIncoming = () => {
+import { formatDate } from "../../../helpers/formatDate";
+export const MessageIncoming = ({ message }) => {
   return (
     <div className="msg-incoming">
-      <p className="msg">¡Hola miguel como estás? espero que bien.!</p>
-      <span className="date-msg">7:33 p.m</span>
+      <p className="msg">{message.message}</p>
+      <span className="date-msg">{formatDate(message.createdAt)}</span>
     </div>
   );
 };

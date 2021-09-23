@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useContext } from "react";
 import avatar from "../../../assets/avatar.jpg";
+import { ChatContext } from "../../../context/chat/ChatContext";
+import { fetchWithToken } from "../../../helpers/fetch";
+import { types } from "../../../types/types";
 
-export const ChatItem = ({ setIsSelect, user }) => {
-  const hola = () => {
-    setIsSelect(true);
+export const ChatItem = ({ user }) => {
+  const { chatState, dispatch } = useContext(ChatContext);
+  const onClick = async () => {
+    dispatch({
+      type: types.activeChat,
+      payload: user.uid,
+    });
+    //Load messages
+    const response = await fetchWithToken(`messages/${user.uid}`);
+    if (response.ok) {
+      dispatch({
+        type: types.loadMessages,
+        payload: response.messages,
+      });
+    }
   };
   return (
-    <div className="chat-item" onClick={hola}>
+    <div
+      className={`chat-item ${
+        user.uid === chatState.chatActive && "chat-active"
+      }`}
+      onClick={onClick}
+    >
       <div className="img-and-status">
         <img src={avatar} alt="avatar" className="img-friend" />
         <div

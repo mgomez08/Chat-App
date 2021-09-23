@@ -58,9 +58,11 @@
 .chat-item:hover {
   background-color: var(--gray-background);
   filter: brightness(1.1);
-}
-.chat-item:hover {
   cursor: pointer;
+}
+.chat-active {
+  background-color: var(--gray-background);
+  filter: brightness(1.1);
 }
 .img-and-status {
   display: flex;
